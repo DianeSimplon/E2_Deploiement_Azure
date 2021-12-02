@@ -1,0 +1,47 @@
+
+        html, body {
+        min-height: 100%;
+        padding: 0;
+        margin: 0;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 14px;
+        color: #666;
+        }
+        h1 {
+        font-weight: 400; 
+        color: #1c87c9;
+        }
+        .main-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #1c87c9;
+        }
+        .main-subblock {
+        width:50%;
+        box-shadow: 0 2px 5px #555;
+        background: #f5f5f5;
+        text-align: center;
+        border-collapse: collapse;
+        }
+/* style sur les titres  */
+th{
+    padding: 10px;
+    background-color: #555;
+    color:white ;
+}
+
+/* style sur les cellules*/
+td{
+    padding: 10px;
+}
+td:nth-child(even){
+    background-color: sienna;
+}
+/* survole les lignes*/
+tr:hover{
+    background-color: rebeccapurple;
+    
+}

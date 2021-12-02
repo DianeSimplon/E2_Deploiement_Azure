@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Jarvis Health IA</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+  </head>
+  
+  <body>
+    <div>
+    <p>Prediction du modele!</p>
+        
+        <p>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul>
+                {% for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+        </p>
+      </div>
+
+ <!--Pour afficher l'image sur le site-->
+ {% if filename %}
+      <div>
+        <img src="{{ url_for('static', filename='img/'+ filename ) }}" alt="Si ça ne marche pas">
+      </div>
+  {% endif %}
+
+  <!--Formulaire -->
+<form method="post" action="/" enctype="multipart/form-data">
+        <input type="file"  id="myFile" name="file" multiple>
+        <input type="submit">
+</form>
+<!--
+<form id='formName' name='formName' onsubmit='redirect();return false;'>
+  <div class="style7">
+    <input type='text' id='userInput' name='userInput' value=''>
+    <input type="image" name="submit" src="https://jekyllcodex.org/uploads/grumpycat.jpg" border="0" alt="Submit" style="width: 50px;" />
+  </div>
+</form>
+-->
+    <div class="main-block">
+    <!--Creer un talo "table" et les bordure "class="main-subblock""--> 
+      <table class="main-subblock">
+        <!-- Ligne-->
+        <thead>
+          <th> Images</th>
+          <th> Filename</th>
+          <th>Prediction</th>
+        </thead>
+        <tr>
+          <!-- les colonnes dans une ligne "balise <th> = td en gras"-->
+            
+          <td>
+            {% if filename %} 
+            <!-- Affiche une image dans la bonne case-->
+            <img src="{{ url_for('static', filename='img/'+ filename ) }}"  alt="Si ça ne marche pas">
+            {% endif %}
+          </td>
+          
+          <!-- Le nom de l'image-->
+          <td>Nom fichier</td>
+          <!-- La prediction-->
+          <td>Prediction</td>
+        </tr>
+        
+        <tr>
+          <td>
+            {% if filename %}
+          <!--Charge l'image-->
+            <img src="{{ url_for('static', filename='img/'+ filename ) }}"  alt="Si ça ne marche pas">
+            {% endif %}
+          </td>
+          <!-- Le nom de l'image-->
+          <td>Nom fichier</td>
+          <!-- La prediction-->
+          <td>Prediction</td>
+        </tr>
+        
+        <tr>
+          <td>
+            {% if filename %} 
+          <!--Charge l'image-->
+            <img src="{{ url_for('static', filename='img/'+ filename ) }}"  alt="Si ça ne marche pas">
+            {% endif %}
+          </td>
+          <!-- Le nom de l'image-->
+          <td>Nom fichier</td>
+          <!-- La prediction-->
+          <td>Prediction</td>
+        </tr>
+       
+        <tr>
+          <td>
+            {% if filename %} 
+          <!--Charge l'image-->
+            <img src="{{ url_for('static', filename='img/'+ filename ) }}"  alt="Si ça ne marche pas">
+            {% endif %}
+          </td>
+
+          <!-- Le nom de l'image-->
+          <td>Nom fichier</td>
+          <!-- La prediction-->
+          <td>Prediction</td>
+        </tr>
+
+      </table>
+    </div>
+
+  </body>
+</html>   
